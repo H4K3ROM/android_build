@@ -2672,6 +2672,13 @@ ifneq (,$(filter address, $(SANITIZE_TARGET)))
   endif
 endif
 
+systemimage-changelog: $(INTERNAL_SYSTEMIMAGE_FILES)
+	@echo -e "Making changelog!"
+	$(hide) APKCERTS=$(APKCERTS_FILE) ./vendor/lineage/tools/changelog
+
+.PHONY: systemimage-changelog
+
+FULL_SYSTEMIMAGE_DEPS += $(INTERNAL_ROOT_FILES) $(INSTALLED_FILES_FILE_ROOT) systemimage-changelog
 FULL_SYSTEMIMAGE_DEPS += $(INTERNAL_ROOT_FILES) $(INSTALLED_FILES_FILE_ROOT)
 
 # -----------------------------------------------------------------
