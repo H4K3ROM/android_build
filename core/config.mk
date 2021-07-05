@@ -296,7 +296,7 @@ FIND_LEAVES_EXCLUDES := $(addprefix --prune=, $(SCAN_EXCLUDE_DIRS) .repo .git)
 
 -include vendor/extra/BoardConfigExtra.mk
 ifneq ($(H4K3ROM_BUILD),)
-include vendor/h4k3rom/config/BoardConfigLineage.mk
+include vendor/h4k3rom/config/BoardConfigh4k3rom.mk
 endif
 
 # The build system exposes several variables for where to find the kernel
